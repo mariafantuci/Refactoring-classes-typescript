@@ -7,18 +7,16 @@ import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import { FoodsContainer } from './styles';
 
-class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foods: [],
-      editingFood: {},
-      modalOpen: false,
-      editModalOpen: false,
-    }
+export function Dashboard () {
+  const [state, setState] = useState('')
+  interface State{
+    foods: [];
+    editingFood: {};
+    modalOpen: false;
+    editModalOpen: false
   }
 
-  async componentDidMount() {
+  function async componentDidMount() {
     const response = await api.get('/foods');
 
     this.setState({ foods: response.data });
@@ -84,9 +82,7 @@ class Dashboard extends Component {
     this.setState({ editingFood: food, editModalOpen: true });
   }
 
-  render() {
     const { modalOpen, editModalOpen, editingFood, foods } = this.state;
-
     return (
       <>
         <Header openModal={this.toggleModal} />
@@ -115,7 +111,4 @@ class Dashboard extends Component {
         </FoodsContainer>
       </>
     );
-  }
 };
-
-export default Dashboard;
