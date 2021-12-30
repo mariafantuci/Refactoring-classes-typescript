@@ -4,11 +4,11 @@ import { Container } from './styles';
 import api from '../../services/api';
 
 interface FoodProps{
-  food: Food;
-  handleEditFood: (food: Food) => void;
+  food: IFood;
+  handleEditFood: (food: IFood) => void;
   handleDelete: (id: number) => void;
 }
-interface Food{
+interface IFood{
   id: number;
   name: string;
   description: string;
@@ -29,7 +29,7 @@ export function Food({food, handleEditFood, handleDelete }: FoodProps) {
     setIsAvailable(!isAvailable);
   }
 
-  const setEditingFood = (food: Food) => {
+  const setEditingFood = (food: IFood) => {
     handleEditFood(food);
   }
   

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import Modal from "react-modal";
