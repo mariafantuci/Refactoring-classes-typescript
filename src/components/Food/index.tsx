@@ -50,7 +50,7 @@ export function Food({food, handleEditFood, handleDelete }: FoodProps) {
           <button
             type="button"
             className="icon"
-            onClick={() =>setEditingFood}
+            onClick={() => setEditingFood(food)}
             data-testid={`edit-food-${food.id}`}
           >
             <FiEdit3 size={20} />
